@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interests — Jimena Vazquez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #FFFFFF;
+      --text:    #1A1A1A;
+      --accent:  #0099FF;
+      --muted:   #9B9C97;
+      --border:  rgba(26,26,26,.09);
+      --display: 'Abril Fatface', serif;
+      --body:    'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--body); overflow-x: hidden; }
+
+    body::after {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .028;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+    }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 64px; padding: 0 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand { text-decoration: none; color: var(--text); }
+    .nav-name  { font-family: var(--display); font-size: 17px; display: block; }
+    .nav-role  { font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 2px; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text); font-size: 13px; font-weight: 600;
+      letter-spacing: -.01em; position: relative; padding-bottom: 2px; transition: color .2s;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px;
+      background: var(--accent); transition: width .3s cubic-bezier(.25,.46,.45,.94);
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--accent); }
+    .nav-links a.active::after { width: 100%; }
+
+    /* ── HERO ──────────────────────────────────────────── */
+    .hero {
+      padding: 140px 64px 72px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-label {
+      font-size: 11px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
+    }
+    .hero-name {
+      font-family: var(--display);
+      font-size: clamp(52px, 7vw, 88px);
+      line-height: .95; color: var(--text); margin-bottom: 20px;
+    }
+    .hero-name span { color: var(--accent); }
+    .hero-sub {
+      font-size: 17px; font-weight: 400; color: var(--muted);
+      max-width: 480px; line-height: 1.65; letter-spacing: -.01em;
+    }
+
+    /* ── INTERESTS GRID ─────────────────────────────────── */
+    .int-wrap { padding: 72px 64px 100px; }
+
+    .int-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .int-tile {
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .int-wide { grid-column: span 2; }
+
+    .int-img {
+      border-radius: 14px; overflow: hidden; width: 100%;
+    }
+    .int-img img {
+      width: 100%; height: 240px;
+      object-fit: cover; display: block;
+      transition: transform .65s cubic-bezier(.25,.46,.45,.94);
+    }
+    .int-wide .int-img img { height: 280px; }
+    .int-tile:hover .int-img img { transform: scale(1.04); }
+
+    .int-label {
+      font-family: var(--display);
+      font-size: clamp(17px, 1.6vw, 22px);
+      color: var(--text); line-height: 1.15;
+    }
+
+    /* Podcast card */
+    .pod-card {
+      background: var(--text); border-radius: 14px;
+      padding: 32px 30px;
+      height: 100%; min-height: 240px;
+      display: flex; flex-direction: column;
+      justify-content: space-between; gap: 20px;
+    }
+    .pod-eyebrow {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
+    .pod-title {
+      font-family: var(--display);
+      font-size: clamp(20px, 2vw, 28px);
+      color: white; line-height: 1.2; flex: 1;
+    }
+    .pod-title span { color: var(--accent); }
+    .pod-host {
+      font-size: 12px; font-weight: 500;
+      color: rgba(255,255,255,.5); letter-spacing: -.01em;
+    }
+    .pod-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,.08);
+      border-radius: 100px; padding: 7px 14px;
+      font-size: 11.5px; font-weight: 600;
+      color: rgba(255,255,255,.7); letter-spacing: -.01em;
+      width: fit-content;
+    }
+    .pod-dot { width: 7px; height: 7px; border-radius: 50%; background: #1DB954; flex-shrink: 0; }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: var(--bg); padding: 28px 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border);
+    }
+    .f-name  { font-family: var(--display); font-size: 14px; color: var(--text); }
+    .f-links { display: flex; gap: 28px; }
+    .f-links a {
+      font-size: 12.5px; font-weight: 500; color: var(--muted);
+      text-decoration: none; transition: color .2s;
+    }
+    .f-links a:hover { color: var(--accent); }
+    .f-copy  { font-size: 11.5px; color: var(--muted); }
+
+    /* ── REVEAL ─────────────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .7s cubic-bezier(.25,.46,.45,.94), transform .7s cubic-bezier(.25,.46,.45,.94);
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav { padding: 0 24px; }
+      .hero { padding: 100px 24px 56px; }
+      .int-wrap { padding: 56px 24px 80px; }
+      .int-grid { grid-template-columns: 1fr 1fr; }
+      .int-wide { grid-column: 1 / -1; }
+      footer { padding: 24px; flex-direction: column; gap: 14px; text-align: center; }
+    }
+    @media (max-width: 540px) {
+      .int-grid { grid-template-columns: 1fr; }
+      .int-wide { grid-column: 1; }
+      .int-img img, .int-wide .int-img img { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="../" class="nav-brand">
+      <span class="nav-name">Jimena Vazquez</span>
+      <span class="nav-role">Product &amp; Marketing</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../#work">Work</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="./" class="active">Interests</a></li>
+      <li><a href="mailto:Jimenav02@Icloud.com">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="hero-label">What I love</p>
+    <h1 class="hero-name">Interests<span>.</span></h1>
+    <p class="hero-sub">The things that keep me curious, grounded, and inspired outside of work.</p>
+  </header>
+
+
+  <!-- GRID -->
+  <div class="int-wrap">
+    <div class="int-grid">
+
+      <!-- Row 1 -->
+      <div class="int-tile reveal">
+        <div class="int-img"><img src="../images/interest-books.png" alt="Reading books"></div>
+        <div class="int-label">Reading books</div>
+      </div>
+
+      <div class="int-tile reveal" style="transition-delay:.07s">
+        <div class="int-img"><img src="../images/interest-friends.png" alt="Friends"></div>
+        <div class="int-label">Spending time with friends</div>
+      </div>
+
+      <div class="int-tile reveal" style="transition-delay:.14s">
+        <div class="int-img"><img src="../images/interest-family.png" alt="Family"></div>
+        <div class="int-label">Spending time with family</div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="int-tile int-wide reveal" style="transition-delay:.07s">
+        <div class="int-img"><img src="../images/interest-healthtech.png" alt="Health tech research"></div>
+        <div class="int-label">Attending networking events</div>
+      </div>
+
+      <div class="int-tile reveal" style="transition-delay:.14s">
+        <div class="int-img"><img src="../images/interest-coach.png" alt="Health coaching"></div>
+        <div class="int-label">Becoming a health coach</div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="int-tile reveal">
+        <div class="int-img"><img src="../images/interest-networking.png" alt="Networking events"></div>
+        <div class="int-label">Researching health tech topics</div>
+      </div>
+
+      <!-- Podcast card — spans 2 columns -->
+      <div class="int-tile int-wide reveal" style="transition-delay:.1s">
+        <div class="pod-card">
+          <div>
+            <p class="pod-eyebrow">PS. My favorite podcast</p>
+          </div>
+          <div class="pod-title">The Diary Of<br>A <span>CEO</span></div>
+          <p class="pod-host">with Steven Bartlett</p>
+          <div class="pod-badge">
+            <span class="pod-dot"></span>
+            Currently listening
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="f-name">Jimena Vazquez</div>
+    <div class="f-links">
+      <a href="https://www.linkedin.com/in/jimena-vázquez/" target="_blank">LinkedIn</a>
+      <a href="mailto:Jimenav02@Icloud.com">Email</a>
+    </div>
+    <div class="f-copy">© 2024 Jimena Vazquez</div>
+  </footer>
+
+
+  <script>
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>

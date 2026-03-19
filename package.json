@@ -1,0 +1,17 @@
+{
+  "name": "jimenas-portfolio",
+  "version": "1.0.0",
+  "description": "Jimena Vazquez — Product & Marketing Portfolio",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "Jimena Vazquez",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "vite": "^8.0.0"
+  }
+}

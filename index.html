@@ -191,33 +191,100 @@
       border-radius: 10px;
       overflow: hidden;
       position: relative;
+      border: 1px solid rgba(26,26,26,.06);
+      background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(245,245,242,.96));
     }
 
-    /* Inner gradient — scales on hover */
+    /* Inner logo stage — scales on hover */
     .pimg-inner {
       position: absolute; inset: 0;
-      transition: transform .65s cubic-bezier(.25,.46,.45,.94);
+      transition: transform .65s cubic-bezier(.25,.46,.45,.94), box-shadow .3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 38px;
+      isolation: isolate;
     }
-    .pcard:hover .pimg-inner { transform: scale(1.04); }
+    .pcard:hover .pimg-inner {
+      transform: scale(1.03);
+      box-shadow: inset 0 0 0 1px rgba(26,26,26,.04);
+    }
 
-    /* Brand gradients on inner */
+    /* Brand stages */
     .pimg-whoop {
       background:
-        radial-gradient(ellipse at 20% 50%, rgba(0,230,200,.22) 0%, transparent 55%),
-        radial-gradient(ellipse at 80% 30%, rgba(0,180,160,.14) 0%, transparent 50%),
-        linear-gradient(150deg, #090909 0%, #0c1a18 60%, #0a1f1c 100%);
+        radial-gradient(circle at 50% 42%, rgba(17, 192, 154, .12), transparent 30%),
+        linear-gradient(145deg, #fafcfb 0%, #edf6f2 100%);
     }
     .pimg-oura {
       background:
-        radial-gradient(ellipse at 30% 60%, rgba(200,160,80,.26) 0%, transparent 55%),
-        radial-gradient(ellipse at 75% 25%, rgba(180,130,50,.16) 0%, transparent 50%),
-        linear-gradient(150deg, #0a0a12 0%, #16120a 60%, #1e1508 100%);
+        radial-gradient(circle at 50% 42%, rgba(198, 154, 74, .14), transparent 30%),
+        linear-gradient(145deg, #fcfaf5 0%, #f5efdf 100%);
     }
     .pimg-longevity {
       background:
-        radial-gradient(ellipse at 25% 65%, rgba(100,200,120,.24) 0%, transparent 55%),
-        radial-gradient(ellipse at 78% 30%, rgba(160,220,140,.14) 0%, transparent 50%),
-        linear-gradient(150deg, #080e08 0%, #0f1a0e 60%, #172612 100%);
+        radial-gradient(circle at 50% 42%, rgba(126, 179, 102, .14), transparent 30%),
+        linear-gradient(145deg, #fbfcf8 0%, #eef5e9 100%);
+    }
+
+    .pbrand-mark {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #121212;
+      text-align: center;
+      max-width: 100%;
+    }
+    .pbrand-mark::before {
+      content: '';
+      position: absolute;
+      inset: -34px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.66);
+      box-shadow: 0 20px 50px rgba(26,26,26,.08);
+      z-index: -1;
+    }
+
+    .pbrand-whoop .pbrand-wordmark {
+      font-family: var(--body);
+      font-size: clamp(54px, 8vw, 92px);
+      font-weight: 800;
+      letter-spacing: -.08em;
+      text-transform: uppercase;
+    }
+
+    .pbrand-oura {
+      gap: 20px;
+    }
+    .pbrand-oura .pbrand-ring {
+      width: clamp(54px, 7vw, 78px);
+      height: clamp(54px, 7vw, 78px);
+      border-radius: 50%;
+      border: 9px solid #b98935;
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,.5);
+      flex: 0 0 auto;
+    }
+    .pbrand-oura .pbrand-wordmark {
+      font-family: var(--display);
+      font-size: clamp(46px, 7.2vw, 84px);
+      line-height: .95;
+      letter-spacing: -.04em;
+    }
+
+    .pbrand-longevity .pbrand-wordmark {
+      font-family: var(--body);
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .92;
+      font-weight: 700;
+      letter-spacing: -.06em;
+    }
+    .pbrand-longevity .pbrand-wordmark span {
+      display: inline-block;
+      font-size: .82em;
+      font-weight: 600;
+      letter-spacing: -.04em;
     }
 
     /* Brand label inside image */
@@ -226,21 +293,12 @@
       pointer-events: none; z-index: 2;
     }
     .pimg-label-name {
-      font-family: var(--display); font-size: 32px; color: rgba(255,255,255,.9);
+      font-family: var(--display); font-size: 32px; color: rgba(18,18,18,.88);
       line-height: 1; display: block; margin-bottom: 7px;
     }
     .pimg-label-sub {
       font-size: 11px; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: rgba(255,255,255,.35);
-    }
-
-    /* Subtle orb inside gradient */
-    .pimg-inner::after {
-      content: ''; position: absolute; border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.06);
-      width: 220px; height: 220px;
-      top: 28%; left: 50%; transform: translateX(-50%);
-      pointer-events: none;
+      text-transform: uppercase; color: rgba(18,18,18,.42);
     }
 
     /* Text below image */
@@ -632,6 +690,9 @@
       <div class="pcard reveal" data-pdf="whoop-case-study.pdf" data-title="WHOOP: PCOS + ADHD Case Study">
         <div class="pimg">
           <div class="pimg-inner pimg-whoop">
+            <div class="pbrand-mark pbrand-whoop" aria-hidden="true">
+              <span class="pbrand-wordmark">WHOOP</span>
+            </div>
             <div class="pimg-label">
               <span class="pimg-label-name">WHOOP</span>
               <span class="pimg-label-sub">Health Wearable</span>
@@ -654,6 +715,10 @@
       <div class="pcard reveal" style="transition-delay:.1s" data-pdf="oura-case-study.pdf" data-title="Oura Ring Case Study">
         <div class="pimg">
           <div class="pimg-inner pimg-oura">
+            <div class="pbrand-mark pbrand-oura" aria-hidden="true">
+              <span class="pbrand-ring"></span>
+              <span class="pbrand-wordmark">oura</span>
+            </div>
             <div class="pimg-label">
               <span class="pimg-label-name">Oura Ring</span>
               <span class="pimg-label-sub">Sleep &amp; Recovery</span>
@@ -676,6 +741,9 @@
       <div class="pcard reveal" style="transition-delay:.2s" data-pdf="longevity-protocol.pdf" data-title="Longevity Protocol — 2BalanceU">
         <div class="pimg">
           <div class="pimg-inner pimg-longevity">
+            <div class="pbrand-mark pbrand-longevity" aria-hidden="true">
+              <span class="pbrand-wordmark">2Balance<span>U</span></span>
+            </div>
             <div class="pimg-label">
               <span class="pimg-label-name">2BalanceU</span>
               <span class="pimg-label-sub">Longevity &amp; Wellness</span>

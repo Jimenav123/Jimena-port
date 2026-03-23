@@ -6,23 +6,26 @@
   <title>Interests — Jimena Vazquez</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:      #FFFFFF;
-      --text:    #1A1A1A;
-      --accent:  #0099FF;
-      --muted:   #9B9C97;
-      --border:  rgba(26,26,26,.09);
-      --display: 'Abril Fatface', serif;
-      --body:    'Inter', sans-serif;
+      --bg:      #f8f3ea;
+      --surface: #fffdf8;
+      --text:    #3f3025;
+      --accent:  #9b6c47;
+      --accent-strong: #7f5738;
+      --muted:   #8c7866;
+      --border:  rgba(95,72,50,.14);
+      --white:   #fffaf3;
+      --display: 'Cormorant Garamond', serif;
+      --body:    'Manrope', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--body); overflow-x: hidden; }
+    body { background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%); color: var(--text); font-family: var(--body); overflow-x: hidden; }
 
     body::after {
       content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .028;
@@ -30,12 +33,11 @@
       background-size: 180px 180px;
     }
 
-    /* ── NAV ─────────────────────────────────────────── */
     .nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       height: 64px; padding: 0 48px;
       display: flex; align-items: center; justify-content: space-between;
-      background: rgba(255,255,255,.82);
+      background: rgba(255,253,248,.88);
       backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--border);
     }
@@ -56,7 +58,6 @@
     .nav-links a.active { color: var(--accent); }
     .nav-links a.active::after { width: 100%; }
 
-    /* ── HERO ──────────────────────────────────────────── */
     .hero {
       padding: 140px 64px 72px;
       border-bottom: 1px solid var(--border);
@@ -76,7 +77,6 @@
       max-width: 480px; line-height: 1.65; letter-spacing: -.01em;
     }
 
-    /* ── INTERESTS GRID ─────────────────────────────────── */
     .int-wrap { padding: 72px 64px 100px; }
 
     .int-grid {
@@ -87,8 +87,20 @@
 
     .int-tile {
       display: flex; flex-direction: column; gap: 14px;
+      padding: 0; border: none; background: none;
+      text-align: left;
     }
     .int-wide { grid-column: span 2; }
+
+    .int-toggle {
+      display: block;
+      width: 100%;
+      border: none;
+      background: none;
+      text-align: left;
+      cursor: pointer;
+      padding: 0;
+    }
 
     .int-img {
       border-radius: 14px; overflow: hidden; width: 100%;
@@ -99,17 +111,86 @@
       transition: transform .65s cubic-bezier(.25,.46,.45,.94);
     }
     .int-wide .int-img img { height: 280px; }
-    .int-tile:hover .int-img img { transform: scale(1.04); }
+    .int-tile:hover .int-img img,
+    .int-tile.open .int-img img { transform: scale(1.04); }
+
+    .int-head {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+      margin-top: 14px;
+    }
 
     .int-label {
       font-family: var(--display);
       font-size: clamp(17px, 1.6vw, 22px);
       color: var(--text); line-height: 1.15;
+      flex: 1;
     }
 
-    /* Podcast card */
+    .int-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1.5px solid var(--border); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; line-height: 1; color: var(--text);
+      transition: transform .3s cubic-bezier(.25,.46,.45,.94), background .2s, color .2s, border-color .2s;
+    }
+
+    .int-tile.open .int-icon {
+      transform: rotate(45deg);
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .int-summary {
+      font-size: 14px; color: var(--muted); line-height: 1.6; letter-spacing: -.01em;
+    }
+
+    .int-detail {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      border-top: 1px solid transparent;
+      padding-top: 0;
+      transition: max-height .4s cubic-bezier(.25,.46,.45,.94), opacity .25s ease, padding-top .25s ease, border-color .25s ease;
+    }
+
+    .int-tile.open .int-detail {
+      max-height: 420px;
+      opacity: 1;
+      padding-top: 18px;
+      border-top-color: var(--border);
+    }
+
+    .int-detail p,
+    .int-detail li {
+      font-size: 14px; line-height: 1.75; color: rgba(63,48,37,.88); letter-spacing: -.01em;
+    }
+
+    .int-detail ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .int-detail li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .int-detail li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
     .pod-card {
-      background: var(--text); border-radius: 14px;
+      background: linear-gradient(160deg, #453327 0%, #2f221a 100%); border-radius: 14px;
       padding: 32px 30px;
       height: 100%; min-height: 240px;
       display: flex; flex-direction: column;
@@ -118,29 +199,28 @@
     .pod-eyebrow {
       font-size: 10px; font-weight: 700;
       letter-spacing: .14em; text-transform: uppercase;
-      color: rgba(255,255,255,.45);
+      color: rgba(255,250,243,.52);
     }
     .pod-title {
       font-family: var(--display);
       font-size: clamp(20px, 2vw, 28px);
-      color: white; line-height: 1.2; flex: 1;
+      color: var(--white); line-height: 1.2; flex: 1;
     }
     .pod-title span { color: var(--accent); }
     .pod-host {
       font-size: 12px; font-weight: 500;
-      color: rgba(255,255,255,.5); letter-spacing: -.01em;
+      color: rgba(255,250,243,.58); letter-spacing: -.01em;
     }
     .pod-badge {
       display: inline-flex; align-items: center; gap: 7px;
-      background: rgba(255,255,255,.08);
+      background: rgba(255,250,243,.1);
       border-radius: 100px; padding: 7px 14px;
       font-size: 11.5px; font-weight: 600;
-      color: rgba(255,255,255,.7); letter-spacing: -.01em;
+      color: rgba(255,250,243,.78); letter-spacing: -.01em;
       width: fit-content;
     }
-    .pod-dot { width: 7px; height: 7px; border-radius: 50%; background: #1DB954; flex-shrink: 0; }
+    .pod-dot { width: 7px; height: 7px; border-radius: 50%; background: #7c8a55; flex-shrink: 0; }
 
-    /* ── FOOTER ─────────────────────────────────────────── */
     footer {
       background: var(--bg); padding: 28px 64px;
       display: flex; align-items: center; justify-content: space-between;
@@ -155,14 +235,12 @@
     .f-links a:hover { color: var(--accent); }
     .f-copy  { font-size: 11.5px; color: var(--muted); }
 
-    /* ── REVEAL ─────────────────────────────────────────── */
     .reveal {
       opacity: 0; transform: translateY(24px);
       transition: opacity .7s cubic-bezier(.25,.46,.45,.94), transform .7s cubic-bezier(.25,.46,.45,.94);
     }
     .reveal.in { opacity: 1; transform: translateY(0); }
 
-    /* ── RESPONSIVE ─────────────────────────────────────── */
     @media (max-width: 900px) {
       .nav { padding: 0 24px; }
       .hero { padding: 100px 24px 56px; }
@@ -180,7 +258,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav">
     <a href="index.html" class="nav-brand">
       <span class="nav-name">Jimena Vazquez</span>
@@ -194,53 +271,105 @@
     </ul>
   </nav>
 
-
-  <!-- HERO -->
   <header class="hero">
     <p class="hero-label">What I love</p>
     <h1 class="hero-name">Interests<span>.</span></h1>
     <p class="hero-sub">The things that keep me curious, grounded, and inspired outside of work.</p>
   </header>
 
-
-  <!-- GRID -->
   <div class="int-wrap">
     <div class="int-grid">
 
-      <!-- Row 1 -->
-      <div class="int-tile reveal">
-        <div class="int-img"><img src="images/interest-books.png" alt="Reading books"></div>
-        <div class="int-label">Reading books</div>
-      </div>
+      <article class="int-tile reveal">
+        <button class="int-toggle" type="button" aria-expanded="false">
+          <div class="int-img"><img src="images/interest-books.png" alt="Reading books"></div>
+          <div class="int-head">
+            <div class="int-label">Reading books</div>
+            <div class="int-icon">+</div>
+          </div>
+        </button>
+        <p class="int-summary">A few all-time favorites I keep coming back to.</p>
+        <div class="int-detail">
+          <ul>
+            <li>Anna Karenina</li>
+            <li>Wuthering Heights</li>
+            <li>Fahrenheit 451</li>
+            <li>The Boy in the Striped Pajamas</li>
+            <li>The Shack</li>
+          </ul>
+        </div>
+      </article>
 
-      <div class="int-tile reveal" style="transition-delay:.07s">
-        <div class="int-img"><img src="images/interest-friends.png" alt="Friends"></div>
-        <div class="int-label">Spending time with friends</div>
-      </div>
+      <article class="int-tile reveal" style="transition-delay:.07s">
+        <button class="int-toggle" type="button" aria-expanded="false">
+          <div class="int-img"><img src="images/interest-friends.png" alt="Spending time with friends"></div>
+          <div class="int-head">
+            <div class="int-label">Spending time with friends</div>
+            <div class="int-icon">+</div>
+          </div>
+        </button>
+        <p class="int-summary">The moments that help me recharge and reset.</p>
+        <div class="int-detail">
+          <p>My friends are my energy source. Whether it is a coffee run, a spontaneous dinner, or just hanging out and doing nothing, those moments are what I recharge on. I believe the people around you shape who you become.</p>
+        </div>
+      </article>
 
-      <div class="int-tile reveal" style="transition-delay:.14s">
-        <div class="int-img"><img src="images/interest-family.png" alt="Family"></div>
-        <div class="int-label">Spending time with family</div>
-      </div>
+      <article class="int-tile reveal" style="transition-delay:.14s">
+        <button class="int-toggle" type="button" aria-expanded="false">
+          <div class="int-img"><img src="images/interest-family.png" alt="Spending time with family"></div>
+          <div class="int-head">
+            <div class="int-label">Spending time with family</div>
+            <div class="int-icon">+</div>
+          </div>
+        </button>
+        <p class="int-summary">The part of my life that keeps everything else in perspective.</p>
+        <div class="int-detail">
+          <p>Some of my favorite moments are the simplest ones. Cooking together, trying new restaurants, watching movies on the couch, and traveling whenever we can. Family is my foundation and the reason I care so much about health in the first place.</p>
+        </div>
+      </article>
 
-      <!-- Row 2 -->
-      <div class="int-tile int-wide reveal" style="transition-delay:.07s">
-        <div class="int-img"><img src="images/interest-healthtech.png" alt="Health tech research"></div>
-        <div class="int-label">Attending networking events</div>
-      </div>
+      <article class="int-tile int-wide reveal" style="transition-delay:.07s">
+        <button class="int-toggle" type="button" aria-expanded="false">
+          <div class="int-img"><img src="images/interest-healthtech.png" alt="Attending networking events"></div>
+          <div class="int-head">
+            <div class="int-label">Attending networking events</div>
+            <div class="int-icon">+</div>
+          </div>
+        </button>
+        <p class="int-summary">I genuinely enjoy being in rooms where people are building things.</p>
+        <div class="int-detail">
+          <p>I genuinely like networking and I know that is not a common thing to say. Something about being around people who are building things just gets me going. I have been to the HBS Women's Health Summit, various health tech events around Boston, and honestly some of the best conversations I have had professionally started from just walking into a room.</p>
+        </div>
+      </article>
 
-      <div class="int-tile reveal" style="transition-delay:.14s">
-        <div class="int-img"><img src="images/interest-coach.png" alt="Health coaching"></div>
-        <div class="int-label">Becoming a health coach</div>
-      </div>
+      <article class="int-tile reveal" style="transition-delay:.14s">
+        <button class="int-toggle" type="button" aria-expanded="false">
+          <div class="int-img"><img src="images/interest-coach.png" alt="Becoming a health coach"></div>
+          <div class="int-head">
+            <div class="int-label">Becoming a health coach</div>
+            <div class="int-icon">+</div>
+          </div>
+        </button>
+        <p class="int-summary">A personal journey that became part of my identity.</p>
+        <div class="int-detail">
+          <p>My health coaching journey started from a deeply personal place. I was diagnosed with PCOS, and my mom was diagnosed with cancer. That experience pushed me to take health into my own hands. I completed a nutrition, health coaching, and menopause teachings certification through Mind Body Green, driven by my passion for female health and wanting to help other women navigate the same challenges.</p>
+        </div>
+      </article>
 
-      <!-- Row 3 -->
-      <div class="int-tile reveal">
-        <div class="int-img"><img src="images/interest-networking.png" alt="Networking events"></div>
-        <div class="int-label">Researching health tech topics</div>
-      </div>
+      <article class="int-tile reveal">
+        <button class="int-toggle" type="button" aria-expanded="false">
+          <div class="int-img"><img src="images/interest-networking.png" alt="Researching health tech topics"></div>
+          <div class="int-head">
+            <div class="int-label">Researching health tech topics</div>
+            <div class="int-icon">+</div>
+          </div>
+        </button>
+        <p class="int-summary">One of those interests that stopped being casual a long time ago.</p>
+        <div class="int-detail">
+          <p>I cannot turn this off even when I try. Wearables, femtech, personalized health, I am constantly reading, researching, and forming opinions. I built case studies on gaps in wearable tech for women that got responses from actual industry executives, so at some point this stopped being a hobby and just became who I am.</p>
+        </div>
+      </article>
 
-      <!-- Podcast card — spans 2 columns -->
       <div class="int-tile int-wide reveal" style="transition-delay:.1s">
         <div class="pod-card">
           <div>
@@ -258,8 +387,6 @@
     </div>
   </div>
 
-
-  <!-- FOOTER -->
   <footer>
     <div class="f-name">Jimena Vazquez</div>
     <div class="f-links">
@@ -269,7 +396,6 @@
     <div class="f-copy">© 2024 Jimena Vazquez</div>
   </footer>
 
-
   <script>
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -277,6 +403,15 @@
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    document.querySelectorAll('.int-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const tile = toggle.closest('.int-tile');
+        const isOpen = tile.classList.contains('open');
+        tile.classList.toggle('open', !isOpen);
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
   </script>
 
 </body>

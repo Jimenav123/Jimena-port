@@ -6,30 +6,30 @@
   <title>About — Jimena Vazquez</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:      #f8f3ea;
-      --surface: #fffdf8;
+      --bg:      #fff;
+      --surface: #fff;
       --text:    #3f3025;
       --accent:  #9b6c47;
       --accent-strong: #7f5738;
       --muted:   #8c7866;
       --border:  rgba(95,72,50,.14);
-      --white:   #fffaf3;
-      --display: 'Cormorant Garamond', serif;
+      --white:   #fff;
+      --display: 'Manrope', sans-serif;
       --body:    'Manrope', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
-    body { background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%); color: var(--text); font-family: var(--body); overflow-x: hidden; }
+    body { background: #fff; color: var(--text); font-family: var(--body); overflow-x: hidden; }
 
     /* grain */
     body::after {
-      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .028;
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       background-size: 180px 180px;
     }
@@ -39,12 +39,12 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       height: 64px; padding: 0 48px;
       display: flex; align-items: center; justify-content: space-between;
-      background: rgba(255,253,248,.88);
+      background: rgba(255,255,255,.88);
       backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--border);
     }
     .nav-brand { text-decoration: none; color: var(--text); }
-    .nav-name  { font-family: var(--display); font-size: 17px; display: block; }
+    .nav-name  { font-family: var(--body); font-size: 17px; display: block; }
     .nav-role  { font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 2px; }
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
@@ -70,7 +70,7 @@
       text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
     }
     .hero-name {
-      font-family: var(--display);
+      font-family: var(--body);
       font-size: clamp(52px, 7vw, 96px);
       line-height: .95; color: var(--text); margin-bottom: 28px;
     }
@@ -107,7 +107,7 @@
     .acc-trigger:hover .acc-title { color: var(--accent); }
 
     .acc-title {
-      font-family: var(--display);
+      font-family: var(--body);
       font-size: clamp(26px, 3vw, 38px);
       color: var(--text); line-height: 1; transition: color .2s;
     }
@@ -203,7 +203,7 @@
       display: flex; align-items: center; justify-content: space-between;
       border-top: 1px solid var(--border);
     }
-    .f-name  { font-family: var(--display); font-size: 14px; color: var(--text); }
+    .f-name  { font-family: var(--body); font-size: 14px; color: var(--text); }
     .f-links { display: flex; gap: 28px; }
     .f-links a {
       font-size: 12.5px; font-weight: 500; color: var(--muted);

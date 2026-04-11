@@ -923,3 +923,32 @@ button, input, textarea { font: inherit; }
     letter-spacing: 4px;
   }
 }
+
+/* Trim roughly one inch of vertical height from the top header area. */
+.site-header {
+  min-height: 204px;
+}
+
+.site-nav {
+  margin-top: 52px;
+}
+
+@media (max-width: 1100px) {
+  .site-header {
+    min-height: 190px;
+  }
+
+  .site-nav {
+    margin-top: 42px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    min-height: 184px;
+  }
+
+  .site-nav {
+    margin-top: 38px;
+  }
+}

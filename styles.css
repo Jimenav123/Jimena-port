@@ -857,3 +857,69 @@ button, input, textarea { font: inherit; }
     font-size: 15px;
   }
 }
+
+/* Smaller top brand lockup per latest homepage feedback. */
+.site-header {
+  min-height: 300px;
+  padding-top: 22px;
+}
+
+.brand__mark {
+  width: 150px;
+  margin-bottom: -96px;
+}
+
+.brand__title {
+  margin-top: 68px;
+  font-size: 42px;
+  letter-spacing: 8px;
+}
+
+.site-nav {
+  width: min(980px, calc(100vw - 220px));
+  margin-top: 92px;
+}
+
+.site-nav a {
+  font-size: 22px;
+  padding: 18px 10px 19px;
+}
+
+@media (max-width: 1100px) {
+  .site-header {
+    min-height: 270px;
+  }
+
+  .brand__mark {
+    width: 124px;
+    margin-bottom: -82px;
+  }
+
+  .brand__title {
+    margin-top: 58px;
+    font-size: 34px;
+    letter-spacing: 6px;
+  }
+
+  .site-nav {
+    width: min(760px, calc(100vw - 48px));
+    margin-top: 74px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    min-height: 260px;
+  }
+
+  .brand__mark {
+    width: 108px;
+    margin-bottom: -72px;
+  }
+
+  .brand__title {
+    margin-top: 52px;
+    font-size: 28px;
+    letter-spacing: 4px;
+  }
+}

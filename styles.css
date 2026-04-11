@@ -499,3 +499,261 @@ button, input, textarea { font: inherit; }
   .chat-button { left: 14px; right: 14px; justify-content: center; border-radius: 10px; }
   .copyright { padding-bottom: 72px; }
 }
+
+/* Home page alignment pass to match the Wix reference screenshots. */
+.site-header {
+  padding: 28px 24px 0;
+  min-height: 468px;
+}
+
+.brand__mark {
+  width: 236px;
+  margin-bottom: -166px;
+}
+
+.brand__title {
+  font-size: clamp(48px, 5.2vw, 86px);
+  letter-spacing: clamp(8px, 1.35vw, 24px);
+  line-height: 1;
+  margin-top: 106px;
+}
+
+.site-nav {
+  width: min(1350px, calc(100vw - 420px));
+  margin-top: 156px;
+}
+
+.site-nav a {
+  font-size: clamp(20px, 1.65vw, 31px);
+  padding: 25px 12px 26px;
+}
+
+.sticky-hero {
+  height: auto;
+  padding-top: 56px;
+}
+
+.hero-collage {
+  position: relative;
+  top: auto;
+  min-height: 519px;
+  width: 100vw;
+}
+
+.hero-tile {
+  min-height: 519px;
+  background-size: 300% auto;
+}
+
+.hero-tile--book { background-position: 0% 0%; }
+.hero-tile--robe { background-position: 32.6% 0%; }
+.hero-tile--matcha { background-position: 65.7% 0%; }
+.hero-tile--pilates { background-position: 99.8% 0%; }
+
+.hero-collage h1 {
+  font-size: clamp(52px, 5vw, 90px);
+  color: var(--black);
+  transform: translateY(58px);
+}
+
+.hero-collage::after,
+.home-about::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -42px;
+  width: 64px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(87, 85, 87, 0.75);
+  transform: translateX(-50%);
+}
+
+.home-about {
+  position: relative;
+  display: block;
+  padding: 174px 24px 202px;
+  text-align: center;
+}
+
+.home-about__title {
+  margin: 0 auto;
+  font-family: var(--playfair);
+  font-size: clamp(98px, 14.2vw, 218px);
+  font-weight: 700;
+  line-height: 0.78;
+  letter-spacing: 0.02em;
+  color: transparent;
+  background-image: linear-gradient(rgba(170, 199, 115, 0.74), rgba(104, 132, 64, 0.74)), url("assets/reference-about.png");
+  background-size: cover;
+  background-position: center 36%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.home-about__link {
+  display: inline-block;
+  margin-top: 92px;
+  font-family: var(--playfair);
+  font-size: clamp(18px, 1.5vw, 25px);
+  color: var(--black);
+  text-decoration: none;
+}
+
+.home-about__link:hover {
+  text-decoration: underline;
+}
+
+.home-post-strip {
+  width: min(1480px, calc(100vw - 536px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 50px;
+  overflow: visible;
+  padding: 0 0 148px;
+}
+
+.post-card a {
+  min-height: 235px;
+}
+
+.post-card__image {
+  background-image: url("assets/reference-about.png");
+  background-size: 214% auto;
+}
+
+.post-card__image--food { background-position: 0% 99%; }
+.post-card__image--coffee { background-position: 50% 99%; }
+.post-card__image--morning { background-position: 100% 99%; }
+
+.post-card__title {
+  font-size: clamp(20px, 1.55vw, 31px);
+  line-height: 1.18;
+  padding: 0 42px 39px;
+  letter-spacing: 0.01em;
+}
+
+.brand-banner {
+  background: var(--white);
+  color: var(--black);
+  padding: 0 24px 116px;
+}
+
+.brand-banner__name {
+  font-size: clamp(30px, 2.6vw, 43px);
+  margin-bottom: 38px;
+}
+
+.brand-banner::before {
+  content: "";
+  display: block;
+  width: 43px;
+  height: 3px;
+  margin: 0 auto 44px;
+  background: rgba(92, 90, 92, 0.68);
+}
+
+.brand-banner__tagline {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--black);
+  font-size: clamp(22px, 2vw, 31px);
+  line-height: 1.25;
+}
+
+@media (max-width: 1100px) {
+  .site-header {
+    min-height: 320px;
+  }
+
+  .brand__mark {
+    width: 150px;
+    margin-bottom: -104px;
+  }
+
+  .brand__title {
+    margin-top: 70px;
+  }
+
+  .site-nav {
+    width: min(760px, calc(100vw - 48px));
+    margin-top: 96px;
+  }
+
+  .hero-collage {
+    min-height: 360px;
+  }
+
+  .hero-tile {
+    min-height: 360px;
+  }
+
+  .home-post-strip {
+    width: min(760px, calc(100vw - 40px));
+    grid-template-columns: 1fr;
+  }
+
+  .post-card a {
+    min-height: 310px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    min-height: 260px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .brand__title {
+    font-size: 34px;
+    letter-spacing: 6px;
+  }
+
+  .site-nav {
+    grid-template-columns: 1fr;
+    margin-top: 70px;
+  }
+
+  .site-nav a {
+    font-size: 16px;
+    padding: 12px 10px;
+  }
+
+  .sticky-hero {
+    padding-top: 24px;
+  }
+
+  .hero-collage {
+    grid-template-columns: repeat(2, 1fr);
+    min-height: auto;
+  }
+
+  .hero-tile {
+    min-height: 240px;
+    background-size: 380% auto;
+  }
+
+  .hero-collage h1 {
+    font-size: 42px;
+    transform: none;
+    padding: 0 20px;
+  }
+
+  .home-about {
+    padding: 110px 18px 142px;
+  }
+
+  .home-about__title {
+    font-size: 78px;
+  }
+
+  .home-about__link {
+    margin-top: 52px;
+  }
+
+  .home-post-strip {
+    padding-bottom: 88px;
+  }
+}

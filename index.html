@@ -415,7 +415,7 @@
     /* ─── PDF MODAL ───────────────────────────────────── */
     .modal-overlay {
       position: fixed; inset: 0; z-index: 500;
-      background: rgba(45,33,25,.74);
+      background: rgba(255,255,255,.96);
       backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       display: flex; align-items: center; justify-content: center;
       padding: 24px;
@@ -429,7 +429,7 @@
       width: 100%; max-width: 960px;
       max-height: 92vh; display: flex; flex-direction: column;
       overflow: hidden;
-      box-shadow: 0 40px 100px rgba(0,0,0,.45);
+      box-shadow: 0 22px 70px rgba(63,48,37,.16);
       transform: translateY(28px) scale(.98);
       transition: transform .38s cubic-bezier(.25,.46,.45,.94);
     }
@@ -456,8 +456,11 @@
       transition: background .2s; font-size: 18px; line-height: 1; color: var(--text);
     }
     .modal-close:hover { background: rgba(95,72,50,.08); }
-    .modal-embed { flex: 1; min-height: 0; }
-    .modal-embed embed { display: block; width: 100%; height: 100%; border: none; min-height: 520px; }
+    .modal-summary { padding: 42px 32px 46px; background: #fff; color: var(--text); }
+    .modal-summary p { font-family: var(--body); }
+    .modal-kicker { margin-bottom: 10px; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .modal-summary-text { max-width: 620px; margin-bottom: 24px; color: var(--muted); line-height: 1.65; }
+    .modal-open-btn { width: fit-content; font-family: var(--body); }
 
     .pinfo { padding: 28px 28px 26px; }
     .ptitle {
@@ -745,7 +748,7 @@
 
     /* Site-wide final overrides: keep every page on one font and a white canvas. */
     *, *::before, *::after { font-family: var(--body) !important; }
-    html, body, main, section, footer, .nav, .hero, #work, #blog, .blog-shell, .blog-preview, .blog-badge, .pimg, .pimg-inner, .pimg-whoop, .pimg-oura, .pimg-longevity, .floating-item, .contact-popup, .pod-card { background: #fff !important; }
+    html, body, main, section, footer, .nav, .hero, #work, #blog, .blog-shell, .blog-preview, .blog-badge, .pimg, .pimg-inner, .pimg-whoop, .pimg-oura, .pimg-longevity, .floating-item, .contact-popup, .pod-card, .modal-overlay, .modal-card, .modal-head, .modal-summary { background: #fff !important; }
   </style>
 </head>
 <body>
@@ -989,8 +992,10 @@
           <button class="modal-close" id="modal-close-btn" aria-label="Close">×</button>
         </div>
       </div>
-      <div class="modal-embed">
-        <embed id="modal-embed-el" src="" type="application/pdf">
+      <div class="modal-summary">
+        <p class="modal-kicker">Case study PDF</p>
+        <p class="modal-summary-text" id="modal-summary-text">Open the case study in a new tab so the portfolio page stays visually consistent.</p>
+        <a href="#" class="btn-primary modal-open-btn" id="modal-open-btn" target="_blank" rel="noreferrer">Open PDF <span>↗</span></a>
       </div>
     </div>
   </div>
@@ -1056,13 +1061,15 @@
 
     // ── PDF Modal ────────────────────────────────────────
     const modal    = document.getElementById('pdf-modal');
-    const embedEl  = document.getElementById('modal-embed-el');
+    const openPdfBtn = document.getElementById('modal-open-btn');
+    const summaryText = document.getElementById('modal-summary-text');
     const titleEl  = document.getElementById('modal-title-text');
     const dlBtn    = document.getElementById('modal-dl-btn');
     const closeBtn = document.getElementById('modal-close-btn');
 
     function openModal(pdf, title) {
-      embedEl.setAttribute('src', pdf);
+      openPdfBtn.setAttribute('href', pdf);
+      summaryText.textContent = 'Open ' + title + ' in a new tab. The PDF itself keeps its original formatting, while this portfolio page stays white and uses one font.';
       dlBtn.setAttribute('href', pdf);
       dlBtn.setAttribute('download', pdf);
       titleEl.textContent = title;
@@ -1073,8 +1080,7 @@
     function closeModal() {
       modal.classList.remove('open');
       document.body.style.overflow = '';
-      // Slight delay to avoid janky reload on re-open
-      setTimeout(() => embedEl.setAttribute('src', ''), 350);
+      openPdfBtn.setAttribute('href', '#');
     }
 
     // Open on card click

@@ -744,9 +744,10 @@
     }
 
     /* Site-wide final overrides: keep every page on one font and a white canvas. */
-    *, *::before, *::after { font-family: var(--body) !important; }
-    html, body, main, section, footer, .nav, .hero, #work, #blog, .blog-shell, .blog-preview, .blog-badge, .pimg, .pimg-inner, .pimg-whoop, .pimg-oura, .pimg-longevity, .floating-item, .contact-popup, .pod-card { background: #fff !important; }
-    .modal-overlay, .modal-card, .modal-head, .modal-embed { background: #f8f6f1 !important; }
+    body, body * { font-family: var(--body) !important; letter-spacing: 0 !important; }
+    h1, h2, h3, h4, h5, h6, .hero-sub, .stitle, .ptitle, .nav-name, .f-name, .acc-title, .int-label, .pod-title, .modal-title { font-family: var(--body) !important; font-weight: 600 !important; }
+    html, body, main, section, footer, .nav, .hero, #work, #blog, .blog-shell, .blog-preview, .blog-badge, .pimg, .pimg-inner, .pimg-whoop, .pimg-oura, .pimg-longevity, .floating-item, .contact-popup, .pod-card, .skill-tag, .tag, .cp-icon { background: #fff !important; }
+    .modal-overlay, .modal-card, .modal-head, .modal-embed, .modal-embed embed { background: #f8f6f1 !important; }
   </style>
 </head>
 <body>

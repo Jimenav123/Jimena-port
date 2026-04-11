@@ -757,3 +757,103 @@ button, input, textarea { font: inherit; }
     padding-bottom: 88px;
   }
 }
+
+/* Final homepage header/hero correction: shorter title, centered logo, four nav links, image directly below. */
+.site-header {
+  min-height: 466px;
+  padding-top: 31px;
+}
+
+.brand__mark {
+  width: 236px;
+  margin-bottom: -151px;
+}
+
+.brand__title {
+  width: max-content;
+  max-width: calc(100vw - 96px);
+  margin-top: 103px;
+  font-size: 57px;
+  letter-spacing: 11.4px;
+  white-space: nowrap;
+}
+
+.site-nav {
+  width: min(1325px, calc(100vw - 420px));
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 156px;
+}
+
+.site-nav a {
+  font-size: 28px;
+  padding: 25px 12px 27px;
+}
+
+.sticky-hero {
+  padding-top: 0;
+}
+
+.hero-collage {
+  min-height: 520px;
+}
+
+.hero-tile {
+  min-height: 520px;
+  background-size: 281% auto;
+}
+
+.hero-collage h1 {
+  font-size: 74px;
+  transform: translateY(64px);
+}
+
+@media (max-width: 1100px) {
+  .site-header {
+    min-height: 350px;
+  }
+
+  .brand__title {
+    font-size: 42px;
+    letter-spacing: 7px;
+    margin-top: 74px;
+  }
+
+  .brand__mark {
+    width: 154px;
+    margin-bottom: -101px;
+  }
+
+  .site-nav {
+    width: min(860px, calc(100vw - 48px));
+    margin-top: 96px;
+  }
+
+  .site-nav a {
+    font-size: 18px;
+  }
+
+  .hero-collage h1 {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    min-height: 340px;
+  }
+
+  .brand__title {
+    font-size: 30px;
+    letter-spacing: 4px;
+    white-space: normal;
+  }
+
+  .site-nav {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 82px;
+  }
+
+  .site-nav a {
+    font-size: 15px;
+  }
+}

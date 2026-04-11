@@ -226,6 +226,10 @@
       .resume-wrap { padding: 60px 24px; }
       footer { padding: 24px; flex-direction: column; gap: 14px; text-align: center; }
     }
+
+    /* Site-wide final overrides: keep every page on one font and a white canvas. */
+    *, *::before, *::after { font-family: var(--body) !important; }
+    html, body, main, section, footer, .nav, .hero, #work, #blog, .blog-shell, .blog-preview, .blog-badge, .pimg, .pimg-inner, .pimg-whoop, .pimg-oura, .pimg-longevity, .floating-item, .contact-popup, .pod-card { background: #fff !important; }
   </style>
 </head>
 <body>

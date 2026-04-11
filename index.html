@@ -742,6 +742,10 @@
       .sc-interests .sc-img { width: 70px; height: 116px; }
       .sc-label { font-size: 12px; }
     }
+
+    /* Site-wide final overrides: keep every page on one font and a white canvas. */
+    *, *::before, *::after { font-family: var(--body) !important; }
+    html, body, main, section, footer, .nav, .hero, #work, #blog, .blog-shell, .blog-preview, .blog-badge, .pimg, .pimg-inner, .pimg-whoop, .pimg-oura, .pimg-longevity, .floating-item, .contact-popup, .pod-card { background: #fff !important; }
   </style>
 </head>
 <body>

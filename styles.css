@@ -1293,3 +1293,39 @@ button, input, textarea { font: inherit; }
     height: 190px;
   }
 }
+
+/* Show the full four-photo hero without skewing or cutting off the bottoms. */
+.hero-collage {
+  height: clamp(360px, 28vw, 560px);
+  min-height: 0;
+}
+
+.hero-tile {
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.hero-tile--book,
+.hero-tile--robe,
+.hero-tile--matcha,
+.hero-tile--pilates {
+  background-position: center bottom;
+}
+
+@media (max-width: 1100px) {
+  .hero-collage {
+    height: clamp(280px, 28vw, 340px);
+    min-height: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-collage {
+    height: auto;
+    min-height: 0;
+  }
+
+  .hero-tile {
+    height: clamp(220px, 56vw, 340px);
+  }
+}

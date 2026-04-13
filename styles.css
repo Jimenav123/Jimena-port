@@ -1053,3 +1053,114 @@ button, input, textarea { font: inherit; }
     top: auto;
   }
 }
+
+
+/* Refined sunburst logo: Wix-style circle without making the header too tall. */
+.site-header {
+  min-height: 248px;
+  padding-top: 16px;
+}
+
+.brand {
+  position: relative;
+  min-height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand__mark {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 0;
+  width: 164px;
+  margin: 0;
+  transform: translateX(-50%);
+  background: repeating-conic-gradient(from -0.5deg, #001b36 0deg 0.95deg, transparent 0.95deg 3.8deg);
+  -webkit-mask: radial-gradient(circle, transparent 0 55%, #000 55% 78%, transparent 78%);
+  mask: radial-gradient(circle, transparent 0 55%, #000 55% 78%, transparent 78%);
+}
+
+.brand__title {
+  position: relative;
+  z-index: 1;
+  width: max-content;
+  max-width: calc(100vw - 96px);
+  margin-top: 6px;
+  font-size: 48px;
+  letter-spacing: 9px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.site-nav {
+  width: min(960px, calc(100vw - 180px));
+  margin-top: 28px;
+}
+
+.hero-collage {
+  top: 248px;
+}
+
+@media (max-width: 1100px) {
+  .site-header {
+    min-height: 218px;
+    padding-top: 14px;
+  }
+
+  .brand {
+    min-height: 118px;
+  }
+
+  .brand__mark {
+    width: 136px;
+  }
+
+  .brand__title {
+    margin-top: 4px;
+    font-size: 36px;
+    letter-spacing: 6px;
+  }
+
+  .site-nav {
+    width: min(760px, calc(100vw - 56px));
+    margin-top: 24px;
+  }
+
+  .hero-collage {
+    top: 218px;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    min-height: 220px;
+    padding-top: 12px;
+  }
+
+  .brand {
+    min-height: 104px;
+  }
+
+  .brand__mark {
+    width: 110px;
+  }
+
+  .brand__title {
+    max-width: calc(100vw - 28px);
+    margin-top: 3px;
+    font-size: 25px;
+    letter-spacing: 3px;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    width: calc(100vw - 32px);
+    margin-top: 22px;
+  }
+
+  .hero-collage {
+    top: auto;
+  }
+}

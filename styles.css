@@ -1329,3 +1329,45 @@ button, input, textarea { font: inherit; }
     height: clamp(220px, 56vw, 340px);
   }
 }
+
+/* Exact-ratio hero pass: preserve full image proportions at every width. */
+.hero-collage {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 2720 / 760;
+}
+
+.hero-tile {
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.hero-tile--book,
+.hero-tile--robe,
+.hero-tile--matcha,
+.hero-tile--pilates {
+  background-position: center center;
+}
+
+@media (max-width: 1100px) {
+  .hero-collage {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 2720 / 760;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-collage {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1360 / 1520;
+  }
+
+  .hero-tile {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 680 / 760;
+  }
+}

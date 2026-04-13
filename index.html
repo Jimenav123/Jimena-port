@@ -296,25 +296,16 @@
       font-size: 14px; letter-spacing: -0.01em; line-height: 1.4;
     }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 13px; align-items: center; }
+    .tags { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
     .tag {
-      display: inline-flex; align-items: center; justify-content: center;
-      font-size: 16px; font-weight: 800; color: #f8f4e8;
-      background:
-        radial-gradient(circle at 18% 24%, rgba(255,255,255,.42) 0 3px, transparent 4px),
-        radial-gradient(circle at 72% 28%, rgba(20,37,9,.48) 0 4px, transparent 5px),
-        radial-gradient(circle at 42% 72%, rgba(255,255,255,.22) 0 2px, transparent 3px),
-        radial-gradient(circle at 84% 76%, rgba(12,30,7,.36) 0 3px, transparent 4px),
-        linear-gradient(135deg, #8da62e 0%, #6f8f22 48%, #31490f 100%);
-      background-size: 78px 58px, 88px 62px, 54px 46px, 72px 52px, auto;
-      padding: 13px 24px;
-      border: 1px solid rgba(48,74,15,.38);
-      border-radius: 999px; letter-spacing: 0; line-height: 1;
-      text-shadow: 0 1px 1px rgba(0,0,0,.24);
-      box-shadow: inset 0 1px 12px rgba(255,255,255,.24), 0 9px 22px rgba(55,76,20,.16);
-      transition: transform .2s ease, filter .2s ease;
+      font-size: 17px; font-weight: 800; color: var(--accent-strong);
+      background: #f1e7dd; padding: 14px 24px;
+      border: 1px solid rgba(95,72,50,.22);
+      border-radius: 999px; letter-spacing: 0;
+      box-shadow: 0 8px 20px rgba(63,48,37,.06);
+      transition: background .2s ease, color .2s ease;
     }
-    .pcard:hover .tag { filter: saturate(1.08) brightness(1.02); transform: translateY(-1px); }
+    .pcard:hover .tag { background: #e7d9ca; color: var(--accent-strong); }
 
     /* ─── BLOG SECTION ──────────────────────────────── */
     #blog {
@@ -499,25 +490,16 @@
       margin-bottom: 18px; letter-spacing: -.01em;
     }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 13px; align-items: center; }
+    .tags { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
     .tag {
-      display: inline-flex; align-items: center; justify-content: center;
-      font-size: 16px; font-weight: 800; color: #f8f4e8;
-      background:
-        radial-gradient(circle at 18% 24%, rgba(255,255,255,.42) 0 3px, transparent 4px),
-        radial-gradient(circle at 72% 28%, rgba(20,37,9,.48) 0 4px, transparent 5px),
-        radial-gradient(circle at 42% 72%, rgba(255,255,255,.22) 0 2px, transparent 3px),
-        radial-gradient(circle at 84% 76%, rgba(12,30,7,.36) 0 3px, transparent 4px),
-        linear-gradient(135deg, #8da62e 0%, #6f8f22 48%, #31490f 100%);
-      background-size: 78px 58px, 88px 62px, 54px 46px, 72px 52px, auto;
-      padding: 13px 24px;
-      border: 1px solid rgba(48,74,15,.38);
-      border-radius: 999px; letter-spacing: 0; line-height: 1;
-      text-shadow: 0 1px 1px rgba(0,0,0,.24);
-      box-shadow: inset 0 1px 12px rgba(255,255,255,.24), 0 9px 22px rgba(55,76,20,.16);
-      transition: transform .2s ease, filter .2s ease;
+      font-size: 17px; font-weight: 800; color: var(--accent-strong);
+      background: #f1e7dd; padding: 14px 24px;
+      border: 1px solid rgba(95,72,50,.22);
+      border-radius: 999px; letter-spacing: 0;
+      box-shadow: 0 8px 20px rgba(63,48,37,.06);
+      transition: background .2s ease, color .2s ease;
     }
-    .pcard:hover .tag { filter: saturate(1.08) brightness(1.02); transform: translateY(-1px); }
+    .pcard:hover .tag { background: #e7d9ca; color: var(--accent-strong); }
 
 
     /* ─── COLLAB / ABOUT SECTION ─────────────────────── */
@@ -805,24 +787,24 @@
     .pimg-logo-oura .pimg-logo-mark, .pimg-logo-longevity .pimg-logo-mark { font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif !important; text-align: center !important; }
     .blog-shell { background: url("images/blog-photo-52a492.png") center 45%/cover no-repeat !important; }
     .blog-copy { background: rgba(255,255,255,.9) !important; }
-    .pimg-inner.pimg-whoop, .pimg-inner.pimg-oura, .pimg-inner.pimg-longevity {
-      background:
-        radial-gradient(circle at 12% 18%, rgba(255,255,255,.32) 0 4px, transparent 5px),
-        radial-gradient(circle at 72% 14%, rgba(10,28,8,.55) 0 6px, transparent 7px),
-        radial-gradient(circle at 36% 38%, rgba(255,255,255,.20) 0 3px, transparent 4px),
-        radial-gradient(circle at 84% 54%, rgba(8,26,6,.42) 0 5px, transparent 6px),
-        radial-gradient(circle at 24% 78%, rgba(18,38,8,.42) 0 7px, transparent 8px),
-        linear-gradient(135deg, #a4b34a 0%, #6f8f22 42%, #31490f 100%) !important;
-      background-size: 180px 140px, 220px 170px, 150px 120px, 190px 150px, 210px 160px, auto !important;
+    .pcard .tags {
+      gap: 16px !important;
+      align-items: center !important;
     }
-    .pimg-logo {
-      width: auto !important;
-      min-height: 0 !important;
-      max-width: calc(100% - 72px) !important;
-      padding: 30px 34px !important;
-      border-radius: 28px !important;
-      background: rgba(255,255,255,.78) !important;
-      box-shadow: 0 18px 40px rgba(24,35,10,.18) !important;
+    .pcard .tag {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 52px !important;
+      padding: 15px 28px !important;
+      border-radius: 999px !important;
+      background: #f1e7dd !important;
+      border: 1px solid rgba(95,72,50,.22) !important;
+      color: var(--accent-strong) !important;
+      font-size: 18px !important;
+      font-weight: 800 !important;
+      line-height: 1 !important;
+      box-shadow: 0 8px 20px rgba(63,48,37,.06) !important;
     }
     .modal-overlay, .modal-card, .modal-head, .modal-embed, .modal-embed embed { background: #f8f6f1 !important; }
   </style>

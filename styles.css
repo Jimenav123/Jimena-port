@@ -1371,3 +1371,24 @@ button, input, textarea { font: inherit; }
     aspect-ratio: 680 / 760;
   }
 }
+
+/* Slightly taller hero frame while keeping images proportional. */
+.hero-collage {
+  aspect-ratio: 2720 / 790;
+}
+
+@media (max-width: 1100px) {
+  .hero-collage {
+    aspect-ratio: 2720 / 790;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-collage {
+    aspect-ratio: 1360 / 1580;
+  }
+
+  .hero-tile {
+    aspect-ratio: 680 / 790;
+  }
+}

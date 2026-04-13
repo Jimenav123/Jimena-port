@@ -228,8 +228,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 18px;
       width: 100%;
+      min-height: 100%;
     }
 
     .pimg-logo-mark {
@@ -241,11 +242,11 @@
     }
 
     .pimg-logo-sub {
-      font-size: 11px;
+      font-size: clamp(14px, 1.2vw, 16px);
       font-weight: 700;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: rgba(63,48,37,.52);
+      color: rgba(63,48,37,.72);
     }
 
     .pimg-logo-whoop .pimg-logo-mark {
@@ -253,7 +254,7 @@
       font-size: clamp(58px, 7vw, 86px);
       font-weight: 700;
       letter-spacing: .08em;
-      color: #31251d;
+      color: #17120f;
     }
 
     .pimg-logo-oura .pimg-logo-mark {
@@ -762,7 +763,9 @@
     body, body * { font-family: var(--body) !important; letter-spacing: 0 !important; }
     h1, h2, h3, h4, h5, h6, .hero-sub, .stitle, .ptitle, .nav-name, .f-name, .acc-title, .int-label, .pod-title, .modal-title { font-family: var(--body) !important; font-weight: 600 !important; }
     html, body, main, section, footer, .nav, .hero, #work, #blog, .blog-preview, .blog-badge, .pimg, .pimg-inner, .pimg-whoop, .pimg-oura, .pimg-longevity, .floating-item, .contact-popup, .pod-card, .skill-tag, .tag, .cp-icon { background: #fff !important; }
-    .pimg-logo-whoop .pimg-logo-mark { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif !important; letter-spacing: .08em !important; text-align: center !important; }
+    .pimg-logo-mark { display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 auto !important; }
+    .pimg-logo-sub { font-size: clamp(14px, 1.2vw, 16px) !important; font-weight: 800 !important; letter-spacing: .11em !important; color: rgba(63,48,37,.72) !important; text-align: center !important; }
+    .pimg-logo-whoop .pimg-logo-mark { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif !important; letter-spacing: .08em !important; color: #17120f !important; text-align: center !important; }
     .pimg-logo-oura .pimg-logo-mark, .pimg-logo-longevity .pimg-logo-mark { font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif !important; text-align: center !important; }
     .blog-shell { background: #f8f6f1 !important; }
     .modal-overlay, .modal-card, .modal-head, .modal-embed, .modal-embed embed { background: #f8f6f1 !important; }

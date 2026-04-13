@@ -316,8 +316,8 @@
       position: relative;
       display: flex;
       align-items: flex-end;
-      min-height: 560px;
-      padding: 40px;
+      min-height: 430px;
+      padding: 28px;
       border: 1px solid var(--border);
       border-radius: 28px;
       overflow: hidden;
@@ -328,8 +328,8 @@
     .blog-copy {
       position: relative;
       z-index: 2;
-      max-width: 560px;
-      padding: 34px 38px;
+      max-width: 720px;
+      padding: 28px 34px;
       border: 1px solid rgba(95,72,50,.14);
       border-radius: 28px;
       background: rgba(255,255,255,.9);
@@ -339,8 +339,8 @@
 
     .blog-text {
       margin-top: 16px;
-      font-size: 16px;
-      line-height: 1.75;
+      font-size: 15px;
+      line-height: 1.55;
       color: rgba(63,48,37,.82);
       letter-spacing: -.01em;
     }
@@ -349,7 +349,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 28px;
+      margin-top: 22px;
     }
 
     .blog-preview {
@@ -722,13 +722,13 @@
       .pimg { height: 320px; }
 
       .blog-shell {
-        min-height: 520px;
-        padding: 24px;
+        min-height: 390px;
+        padding: 22px;
       }
 
       .blog-copy {
         max-width: 100%;
-        padding: 26px;
+        padding: 22px;
       }
 
       .blog-preview {
@@ -785,7 +785,8 @@
     .pimg-logo-sub { font-size: clamp(14px, 1.2vw, 16px) !important; font-weight: 800 !important; letter-spacing: .11em !important; color: rgba(63,48,37,.72) !important; text-align: center !important; }
     .pimg-logo-whoop .pimg-logo-mark { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif !important; letter-spacing: .08em !important; color: #17120f !important; text-align: center !important; }
     .pimg-logo-oura .pimg-logo-mark, .pimg-logo-longevity .pimg-logo-mark { font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif !important; text-align: center !important; }
-    .blog-shell { background: url("images/matcha-bubbles-bg.jpg") center center/cover no-repeat !important; }
+    .blog-shell { min-height: 430px !important; padding: 28px !important; background: url("images/matcha-bubbles-bg.jpg") center center/cover no-repeat !important; }
+    .blog-copy { max-width: 720px !important; padding: 28px 34px !important; }
     .blog-copy { background: rgba(255,255,255,.9) !important; }
     .pcard .tags {
       gap: 10px !important;

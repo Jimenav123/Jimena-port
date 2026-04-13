@@ -296,15 +296,16 @@
       font-size: 14px; letter-spacing: -0.01em; line-height: 1.4;
     }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .tags { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
     .tag {
-      font-size: 15px; font-weight: 700; color: var(--accent-strong);
-      background: #f8f6f1; padding: 11px 18px;
-      border: 1px solid rgba(95,72,50,.16);
+      font-size: 17px; font-weight: 800; color: var(--accent-strong);
+      background: #f1e7dd; padding: 14px 24px;
+      border: 1px solid rgba(95,72,50,.22);
       border-radius: 999px; letter-spacing: 0;
+      box-shadow: 0 8px 20px rgba(63,48,37,.06);
       transition: background .2s ease, color .2s ease;
     }
-    .pcard:hover .tag { background: #efe7dd; color: var(--accent-strong); }
+    .pcard:hover .tag { background: #e7d9ca; color: var(--accent-strong); }
 
     /* ─── BLOG SECTION ──────────────────────────────── */
     #blog {
@@ -777,7 +778,7 @@
     /* Site-wide final overrides: keep every page on one font and a white canvas. */
     body, body * { font-family: var(--body) !important; letter-spacing: 0 !important; }
     h1, h2, h3, h4, h5, h6, .hero-sub, .stitle, .ptitle, .nav-name, .f-name, .acc-title, .int-label, .pod-title, .modal-title { font-family: var(--body) !important; font-weight: 600 !important; }
-    html, body, main, section, footer, .nav, .hero, #work, #blog, .blog-preview, .blog-badge, .pimg, .pimg-inner, .pimg-whoop, .pimg-oura, .pimg-longevity, .floating-item, .contact-popup, .pod-card, .skill-tag, .tag, .cp-icon { background: #fff !important; }
+    html, body, main, section, footer, .nav, .hero, #work, #blog, .blog-preview, .blog-badge, .pimg, .pimg-inner, .pimg-whoop, .pimg-oura, .pimg-longevity, .floating-item, .contact-popup, .pod-card, .skill-tag, .cp-icon { background: #fff !important; }
     .pimg-logo-mark { display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 auto !important; }
     .pimg-logo-sub { font-size: clamp(14px, 1.2vw, 16px) !important; font-weight: 800 !important; letter-spacing: .11em !important; color: rgba(63,48,37,.72) !important; text-align: center !important; }
     .pimg-logo-whoop .pimg-logo-mark { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif !important; letter-spacing: .08em !important; color: #17120f !important; text-align: center !important; }

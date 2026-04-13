@@ -1176,7 +1176,7 @@ button, input, textarea { font: inherit; }
   position: relative;
   top: auto;
   width: 100%;
-  min-height: 520px;
+  min-height: 360px;
   display: block;
   background-image: url("assets/hero-collage.png");
   background-repeat: no-repeat;
@@ -1195,12 +1195,12 @@ button, input, textarea { font: inherit; }
 @media (max-width: 1100px) {
   .hero-collage {
     top: auto;
-    min-height: 420px;
+    min-height: 300px;
   }
 }
 
 @media (max-width: 700px) {
   .hero-collage {
-    min-height: 300px;
+    min-height: 220px;
   }
 }

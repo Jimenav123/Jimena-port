@@ -1164,3 +1164,43 @@ button, input, textarea { font: inherit; }
     top: auto;
   }
 }
+
+/* Hero placement fix: one cohesive image strip directly below the nav. */
+.sticky-hero {
+  height: auto;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.hero-collage {
+  position: relative;
+  top: auto;
+  width: 100%;
+  min-height: 520px;
+  display: block;
+  background-image: url("assets/hero-collage.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+.hero-tile {
+  display: none;
+}
+
+.hero-collage h1 {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .hero-collage {
+    top: auto;
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-collage {
+    min-height: 300px;
+  }
+}

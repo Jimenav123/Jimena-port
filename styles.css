@@ -1483,19 +1483,25 @@ button, input, textarea { font: inherit; }
 .post-card__image--glucose,
 .blog-list-card__image--glucose,
 .single-post__image--glucose {
-  background-position: 0% 99%;
+  background-image: url("assets/olives.jpg");
+  background-size: cover;
+  background-position: center center;
 }
 
 .post-card__image--cortisol,
 .blog-list-card__image--cortisol,
 .single-post__image--cortisol {
-  background-position: 50% 99%;
+  background-image: url("assets/cortisol-yoga.jpg");
+  background-size: cover;
+  background-position: center center;
 }
 
 .post-card__image--pcos,
 .blog-list-card__image--pcos,
 .single-post__image--pcos {
-  background-position: 100% 99%;
+  background-image: url("assets/sushi.jpg");
+  background-size: cover;
+  background-position: center center;
 }
 
 .blog-index {
@@ -1509,6 +1515,12 @@ button, input, textarea { font: inherit; }
 
 .blog-list-card__image {
   background-size: 214% auto;
+}
+
+.blog-list-card__image--glucose,
+.blog-list-card__image--cortisol,
+.blog-list-card__image--pcos {
+  background-size: cover;
 }
 
 .single-post {

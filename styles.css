@@ -1601,3 +1601,22 @@ button, input, textarea { font: inherit; }
     padding-right: 20px;
   }
 }
+
+/* Homepage-specific images for the first three blog preview cards. */
+.post-card__image--food {
+  background-image: url("assets/food.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.post-card__image--coffee {
+  background-image: url("assets/coffee.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.post-card__image--morning {
+  background-image: url("assets/red-light.avif");
+  background-size: cover;
+  background-position: center center;
+}

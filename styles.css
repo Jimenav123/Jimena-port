@@ -1459,3 +1459,133 @@ button, input, textarea { font: inherit; }
     font-size: 18px;
   }
 }
+
+/* Expanded blog library: six cohesive home cards and readable full posts. */
+.home-post-strip {
+  width: min(1520px, calc(100vw - 240px));
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(34px, 3.2vw, 58px);
+  padding: 0 0 150px;
+}
+
+.post-card a {
+  min-height: clamp(270px, 18vw, 340px);
+}
+
+.post-card__title {
+  max-width: 92%;
+  font-size: clamp(18px, 1.25vw, 26px);
+  line-height: 1.18;
+  padding: 0 clamp(24px, 2vw, 42px) clamp(28px, 2.2vw, 42px);
+}
+
+.post-card__image--glucose,
+.blog-list-card__image--glucose,
+.single-post__image--glucose {
+  background-position: 0% 99%;
+}
+
+.post-card__image--cortisol,
+.blog-list-card__image--cortisol,
+.single-post__image--cortisol {
+  background-position: 50% 99%;
+}
+
+.post-card__image--pcos,
+.blog-list-card__image--pcos,
+.single-post__image--pcos {
+  background-position: 100% 99%;
+}
+
+.blog-index {
+  max-width: 1120px;
+}
+
+.blog-list-card {
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  min-height: 270px;
+}
+
+.blog-list-card__image {
+  background-size: 214% auto;
+}
+
+.single-post {
+  max-width: 900px;
+}
+
+.single-post h2 {
+  font-family: var(--playfair);
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 400;
+  line-height: 1.16;
+  margin: 48px 0 18px;
+}
+
+.single-post h3 {
+  font-family: var(--playfair);
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 400;
+  margin: 34px 0 12px;
+}
+
+.single-post ul,
+.single-post ol {
+  font-family: var(--libre);
+  font-size: 17px;
+  line-height: 1.9;
+  margin: 0 0 24px;
+  padding-left: 28px;
+}
+
+.single-post li {
+  margin: 0 0 10px;
+}
+
+.single-post a {
+  overflow-wrap: anywhere;
+}
+
+.post-tags {
+  color: var(--muted);
+  font-size: 14px !important;
+}
+
+@media (max-width: 1100px) {
+  .home-post-strip {
+    width: min(860px, calc(100vw - 48px));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blog-list-card {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-list-card__image {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-post-strip {
+    width: calc(100vw - 36px);
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 96px;
+  }
+
+  .post-card a {
+    min-height: 300px;
+  }
+
+  .blog-index {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .single-post {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FĒMME — AI Health Coach Built for Women's Biology</title>
+  <meta name="description" content="FĒMME is the cycle-synced AI health coach that tells you exactly what to eat, how to train, and how to recover — based on where you are in your cycle today.">
+  <link rel="stylesheet" href="femme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="f-nav">
+    <div class="f-nav__inner">
+      <a class="f-nav__logo" href="index.html">FĒM<span>ME</span></a>
+      <ul class="f-nav__links">
+        <li><a href="#phases">How It Works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+      <a href="app.html" class="btn btn-terra f-nav__cta">Try the Demo →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="l-hero">
+    <div class="l-hero__left reveal">
+      <div class="l-hero__eyebrow">Cycle-synced AI coaching</div>
+      <h1 class="l-hero__headline">
+        Your body has<br>
+        a rhythm.<br>
+        Finally, an app<br>
+        that <em>moves with it.</em>
+      </h1>
+      <p class="l-hero__sub">
+        Most health apps track your data. FĒMME tells you what to actually do with it — personalized to your phase, your biology, your patterns.
+      </p>
+      <div class="l-hero__actions">
+        <a href="app.html" class="btn btn-primary">Open the App →</a>
+        <a href="#phases" class="btn btn-outline">See How It Works</a>
+      </div>
+      <div class="l-hero__proof">
+        <div class="l-hero__avatars">
+          <span>🌸</span>
+          <span>🌿</span>
+          <span>✨</span>
+          <span>💫</span>
+        </div>
+        <span>Join 2,400+ women on the waitlist</span>
+      </div>
+    </div>
+
+    <div class="l-hero__right">
+      <div class="l-hero__tile l-hero__tile--tall">
+        <img src="../assets/hero-pilates-clean.avif" alt="Pilates">
+        <div class="l-hero__phase-badge">
+          <strong>Day 9 · Follicular</strong>
+          High energy → strength train today
+        </div>
+      </div>
+      <div class="l-hero__tile">
+        <img src="../assets/hero-matcha-clean.avif" alt="Matcha">
+        <div class="l-hero__phase-badge">
+          <strong>Nutrition</strong>
+          Protein + iron-rich
+        </div>
+      </div>
+      <div class="l-hero__tile">
+        <img src="../assets/blog-morning-routine.jpg" alt="Morning routine">
+        <div class="l-hero__phase-badge">
+          <strong>Recovery</strong>
+          Sleep before 10 PM
+        </div>
+      </div>
+      <div class="l-hero__tile">
+        <img src="../assets/hero-robe-clean.avif" alt="Rest">
+        <div class="l-hero__phase-badge">
+          <strong>Mood</strong>
+          Confidence ↑ this week
+        </div>
+      </div>
+      <div class="l-hero__tile">
+        <img src="../assets/cortisol-yoga.jpg" alt="Yoga">
+        <div class="l-hero__phase-badge">
+          <strong>Stress</strong>
+          Cortisol-lowering flow
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHASES -->
+  <section class="l-phases" id="phases">
+    <div class="container">
+      <div class="l-phases__header">
+        <p class="section-label">Your cycle, decoded</p>
+        <h2 class="section-title">Four phases. Four completely different bodies.</h2>
+        <p class="section-sub">Every recommendation shifts based on exactly where you are in your cycle — because your biology changes, your coaching should too.</p>
+      </div>
+      <div class="l-phases__grid">
+
+        <div class="phase-card phase-card--menstrual reveal">
+          <div class="phase-card__number">1</div>
+          <div class="phase-card__day">Days 1–5</div>
+          <div class="phase-card__name">Menstrual</div>
+          <p class="phase-card__desc">Rest isn't laziness — it's strategy. Your body is doing serious work. Honor it with warmth, iron-rich foods, and gentle movement.</p>
+          <div class="phase-card__tags">
+            <span class="phase-tag">Iron & B12</span>
+            <span class="phase-tag">Yin yoga</span>
+            <span class="phase-tag">Anti-inflammatory</span>
+            <span class="phase-tag">Early sleep</span>
+          </div>
+        </div>
+
+        <div class="phase-card phase-card--follicular reveal">
+          <div class="phase-card__number">2</div>
+          <div class="phase-card__day">Days 6–13</div>
+          <div class="phase-card__name">Follicular</div>
+          <p class="phase-card__desc">Estrogen is rising. Your energy, mood, and brain are in peak form. This is your window for new habits, hard workouts, and bold decisions.</p>
+          <div class="phase-card__tags">
+            <span class="phase-tag">Zinc & B6</span>
+            <span class="phase-tag">HIIT & strength</span>
+            <span class="phase-tag">High protein</span>
+            <span class="phase-tag">New habits</span>
+          </div>
+        </div>
+
+        <div class="phase-card phase-card--ovulatory reveal">
+          <div class="phase-card__number">3</div>
+          <div class="phase-card__day">Days 14–16</div>
+          <div class="phase-card__name">Ovulatory</div>
+          <p class="phase-card__desc">Peak power. LH surge drives strength, confidence, and charisma. Train hard, connect deeply, and lead. But watch for ligament vulnerability.</p>
+          <div class="phase-card__tags">
+            <span class="phase-tag">Antioxidants</span>
+            <span class="phase-tag">PR attempts</span>
+            <span class="phase-tag">Social energy</span>
+            <span class="phase-tag">Omega-3s</span>
+          </div>
+        </div>
+
+        <div class="phase-card phase-card--luteal reveal">
+          <div class="phase-card__number">4</div>
+          <div class="phase-card__day">Days 17–28</div>
+          <div class="phase-card__name">Luteal</div>
+          <p class="phase-card__desc">Progesterone peaks and then drops. Brain fog, bloating, and mood shifts are biology — not weakness. Magnesium, rest, and grace are your tools.</p>
+          <div class="phase-card__tags">
+            <span class="phase-tag">Magnesium</span>
+            <span class="phase-tag">Lower intensity</span>
+            <span class="phase-tag">Complex carbs</span>
+            <span class="phase-tag">Evening rituals</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES (masonry grid) -->
+  <section class="l-features" id="features">
+    <div class="container">
+      <div class="l-phases__header">
+        <p class="section-label">Built different</p>
+        <h2 class="section-title">Not a tracker. A coach.</h2>
+        <p class="section-sub">Every feature is designed around one thing: telling you what to actually do — in plain language, every single day.</p>
+      </div>
+      <div class="l-features__grid">
+
+        <div class="feat-card feat-card--tall reveal">
+          <img class="feat-card__img" src="../assets/hero-pilates-clean.avif" alt="Training">
+          <div class="feat-card__body">
+            <div class="feat-card__icon feat-card__icon--terra">🏋️</div>
+            <h3 class="feat-card__title">Cycle-Synced Training</h3>
+            <p class="feat-card__text">Your workout plan shifts every week — heavy lifts in follicular, PR attempts at ovulation, deload in late luteal. No more wondering why you feel weak.</p>
+          </div>
+        </div>
+
+        <div class="feat-card reveal">
+          <img class="feat-card__img" src="../assets/food.jpg" alt="Nutrition">
+          <div class="feat-card__body">
+            <div class="feat-card__icon feat-card__icon--sage">🥗</div>
+            <h3 class="feat-card__title">Phase-Aware Nutrition</h3>
+            <p class="feat-card__text">Iron in menstrual. Zinc in follicular. Anti-inflammatory fats in luteal. Real food prescriptions, not macros to log.</p>
+          </div>
+        </div>
+
+        <div class="feat-card reveal">
+          <img class="feat-card__img" src="../assets/hero-robe-clean.avif" alt="Sleep">
+          <div class="feat-card__body">
+            <div class="feat-card__icon feat-card__icon--rose">🌙</div>
+            <h3 class="feat-card__title">Sleep Intelligence</h3>
+            <p class="feat-card__text">Progesterone disrupts sleep in late luteal. FĒMME flags it, explains it, and gives you a phase-appropriate wind-down protocol before it happens to you.</p>
+          </div>
+        </div>
+
+        <div class="feat-card feat-card--wide reveal">
+          <img class="feat-card__img" src="../assets/blog-balancing-hormones.avif" alt="AI Coach">
+          <div class="feat-card__body">
+            <div class="feat-card__icon feat-card__icon--plum">🤖</div>
+            <h3 class="feat-card__title">Your AI Health Coach</h3>
+            <p class="feat-card__text">Not a chatbot with generic answers. A proactive coach that reads your wearable data, cross-references your cycle phase, and messages you before you even notice something's off. It asks the questions real coaches ask — mood shifts, cravings, skin changes — and treats them as real biomarkers.</p>
+          </div>
+        </div>
+
+        <div class="feat-card reveal">
+          <img class="feat-card__img" src="../assets/cortisol-yoga.jpg" alt="Education">
+          <div class="feat-card__body">
+            <div class="feat-card__icon feat-card__icon--terra">📖</div>
+            <h3 class="feat-card__title">Hormone Education</h3>
+            <p class="feat-card__text">Every recommendation explains the <em>why</em> in plain language. No jargon, no shame — because you were never taught this. Now you will be.</p>
+          </div>
+        </div>
+
+        <div class="feat-card reveal">
+          <img class="feat-card__img" src="../assets/red-light.avif" alt="Longevity">
+          <div class="feat-card__body">
+            <div class="feat-card__icon feat-card__icon--plum">♾️</div>
+            <h3 class="feat-card__title">Women's Longevity</h3>
+            <p class="feat-card__text">HRV, inflammation, metabolic health — tracked through the lens of female biology. The longevity conversation is finally including women. FĒMME is where it lives.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AI COACH PREVIEW -->
+  <section class="l-coach">
+    <div class="container">
+      <div class="l-coach__inner">
+        <div class="l-coach__chat reveal">
+          <div class="chat-header">
+            <div class="chat-header__avatar">✨</div>
+            <div>
+              <div class="chat-header__name">FĒMME Coach</div>
+              <div class="chat-header__status chat-online">Active now</div>
+            </div>
+          </div>
+          <div class="chat-body" id="landing-chat">
+            <div class="chat-msg">
+              <div class="chat-msg__avatar">✨</div>
+              <div class="chat-msg__bubble">Good morning, Jimena ☀️ You're on day 9 — late follicular phase. Your estrogen is rising and energy should feel good today.</div>
+            </div>
+            <div class="chat-msg">
+              <div class="chat-msg__avatar">✨</div>
+              <div class="chat-msg__bubble">Today I'd suggest: a strength session in the afternoon, a protein-forward lunch, and melatonin-free sleep before 11 PM. Want the full plan?</div>
+            </div>
+            <div class="chat-msg chat-msg--user">
+              <div class="chat-msg__avatar">J</div>
+              <div class="chat-msg__bubble">Why do I feel so bloated before my period even though I eat clean?</div>
+            </div>
+            <div class="chat-msg">
+              <div class="chat-msg__avatar">✨</div>
+              <div class="chat-msg__bubble">
+                Totally normal — and it's not your food. In late luteal (days 22–28), progesterone drops sharply and your body retains water as a result. It's a hormonal response, not a diet failure.<br><br>
+                What actually helps: reduce sodium slightly, increase magnesium (400mg), and add gentle movement like walking or yoga. It usually resolves within 2 days of your period starting.
+              </div>
+            </div>
+            <div class="chat-msg">
+              <div class="chat-msg__avatar">✨</div>
+              <div class="chat-msg__bubble">
+                <div class="chat-typing"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-row">
+            <input class="chat-input" type="text" placeholder="Ask anything about your cycle or health…" id="landing-input">
+            <button class="chat-send" onclick="landingChat()">→</button>
+          </div>
+        </div>
+
+        <div class="l-coach__text reveal">
+          <p class="section-label">The AI coach</p>
+          <h2 class="section-title">Proactive, not reactive.</h2>
+          <p class="section-sub">FĒMME doesn't wait for you to ask. It knows where you are in your cycle, reads your patterns, and tells you what's coming before it hits.</p>
+          <ul class="l-coach__bullets">
+            <li>Cross-references wearable data with your cycle phase in real time</li>
+            <li>Flags patterns before they become symptoms you feel</li>
+            <li>Explains the WHY behind every insight — no medical jargon</li>
+            <li>Gets more accurate each month as it learns your specific biology</li>
+            <li>Interprets bloodwork and labs in plain language</li>
+          </ul>
+          <div style="margin-top: 32px;">
+            <a href="app.html" class="btn btn-terra">Try FĒMME Coach →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="l-pricing" id="pricing">
+    <div class="container">
+      <div class="l-phases__header">
+        <p class="section-label">Plans</p>
+        <h2 class="section-title">The health coach you deserve — actually affordable.</h2>
+        <p class="section-sub">Cancel any time. Every tier includes the core cycle-syncing engine.</p>
+      </div>
+      <div class="l-pricing__grid">
+
+        <div class="price-card reveal">
+          <div class="price-card__tier">Starter</div>
+          <div class="price-card__name">FĒMME Free</div>
+          <div class="price-card__price">
+            <span class="price-card__amount">$0</span>
+            <span class="price-card__per">/month</span>
+          </div>
+          <p class="price-card__note">Always free. No credit card needed.</p>
+          <div class="price-card__divider"></div>
+          <ul class="price-card__features">
+            <li>Cycle phase tracker</li>
+            <li>Phase education library</li>
+            <li>1 daily insight</li>
+            <li>Phase-aware nutrition basics</li>
+          </ul>
+          <a href="app.html" class="btn btn-outline">Get Started Free</a>
+        </div>
+
+        <div class="price-card price-card--featured reveal">
+          <div class="price-card__badge">Most Popular</div>
+          <div class="price-card__tier">Pro</div>
+          <div class="price-card__name">FĒMME Pro</div>
+          <div class="price-card__price">
+            <span class="price-card__amount">$9</span>
+            <span class="price-card__per">/month</span>
+          </div>
+          <p class="price-card__note">$99/year · Save 17%</p>
+          <div class="price-card__divider"></div>
+          <ul class="price-card__features">
+            <li>Full AI health coach (unlimited)</li>
+            <li>Wearable integration (Oura, Apple Watch, Whoop)</li>
+            <li>Personalized training plans by phase</li>
+            <li>Full supplement protocol + timing</li>
+            <li>Mood, energy & symptom correlation</li>
+            <li>Longevity metrics (HRV, metabolic age)</li>
+            <li>Monthly cycle pattern report</li>
+          </ul>
+          <a href="app.html" class="btn btn-terra">Start Free Trial</a>
+        </div>
+
+        <div class="price-card reveal">
+          <div class="price-card__tier">Premium</div>
+          <div class="price-card__name">FĒMME Labs</div>
+          <div class="price-card__price">
+            <span class="price-card__amount">$29</span>
+            <span class="price-card__per">/month</span>
+          </div>
+          <p class="price-card__note">For the deeply health-conscious woman.</p>
+          <div class="price-card__divider"></div>
+          <ul class="price-card__features">
+            <li>Everything in Pro</li>
+            <li>Bloodwork & lab interpretation (AI)</li>
+            <li>Telehealth provider access</li>
+            <li>1:1 sessions with certified coaches</li>
+            <li>Perimenopause preparation module</li>
+            <li>Custom longevity report quarterly</li>
+          </ul>
+          <a href="app.html" class="btn btn-outline">Get Labs</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST CTA -->
+  <section class="l-waitlist">
+    <div class="l-waitlist__logo" aria-hidden="true">FĒMME</div>
+    <div class="container" style="position:relative; z-index:1;">
+      <p class="section-label">Early access</p>
+      <h2 class="section-title" style="color:white; max-width:480px; margin: 0 auto 16px;">
+        Be the first to know when we launch.
+      </h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55); margin-bottom:40px;">
+        Join 2,400 women on the waitlist. Founding members get 50% off for life.
+      </p>
+      <form class="waitlist-form" onsubmit="handleWaitlist(event)">
+        <input type="email" placeholder="your@email.com" required id="waitlist-email">
+        <button type="submit">Join Waitlist</button>
+      </form>
+      <p class="l-waitlist__note" id="waitlist-confirm" style="display:none; color: rgba(255,255,255,0.6); margin-top: 14px;">
+        ✓ You're on the list! We'll be in touch soon.
+      </p>
+      <p class="l-waitlist__note">No spam. Unsubscribe any time.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="f-footer">
+    <span class="f-footer__logo">FĒMME</span>
+    <ul class="f-footer__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="app.html">Dashboard</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <span class="f-footer__copy">© 2026 FĒMME · Built by Jimena Vazquez</span>
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+
+    // Waitlist form
+    function handleWaitlist(e) {
+      e.preventDefault();
+      document.getElementById('waitlist-confirm').style.display = 'block';
+      document.getElementById('waitlist-email').value = '';
+    }
+
+    // Landing chat interaction
+    const landingResponses = [
+      "That's a great question. Based on your current phase, I'd recommend focusing on protein and iron today — your body is in recovery mode and needs these building blocks to feel strong.",
+      "In the follicular phase, your estrogen is rising and your body responds really well to new challenges. This is the best time to try a new workout or form a new habit.",
+      "Cycle tracking gives you a real edge. Instead of wondering why your energy varies week to week, you start to predict it — and work with it instead of against it.",
+      "Brain fog before your period is real, and it has a name: cognitive shifts in late luteal phase. Progesterone affects your GABA receptors, which is why your brain feels slower. It passes. Magnesium and sleep help."
+    ];
+    let landingResponseIdx = 0;
+
+    function landingChat() {
+      const input = document.getElementById('landing-input');
+      const chat = document.getElementById('landing-chat');
+      if (!input.value.trim()) return;
+
+      // Add user message
+      const userMsg = document.createElement('div');
+      userMsg.className = 'chat-msg chat-msg--user';
+      userMsg.innerHTML = `<div class="chat-msg__avatar">J</div><div class="chat-msg__bubble">${input.value}</div>`;
+      chat.appendChild(userMsg);
+      input.value = '';
+      chat.scrollTop = chat.scrollHeight;
+
+      // Add typing indicator
+      const typing = document.createElement('div');
+      typing.className = 'chat-msg';
+      typing.innerHTML = `<div class="chat-msg__avatar">✨</div><div class="chat-msg__bubble"><div class="chat-typing"><span></span><span></span><span></span></div></div>`;
+      chat.appendChild(typing);
+      chat.scrollTop = chat.scrollHeight;
+
+      setTimeout(() => {
+        chat.removeChild(typing);
+        const resp = document.createElement('div');
+        resp.className = 'chat-msg';
+        resp.innerHTML = `<div class="chat-msg__avatar">✨</div><div class="chat-msg__bubble">${landingResponses[landingResponseIdx % landingResponses.length]}</div>`;
+        chat.appendChild(resp);
+        landingResponseIdx++;
+        chat.scrollTop = chat.scrollHeight;
+      }, 1400);
+    }
+
+    document.getElementById('landing-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') landingChat();
+    });
+  </script>
+</body>
+</html>

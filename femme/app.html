@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FĒMME — Dashboard</title>
+  <link rel="stylesheet" href="femme.css">
+</head>
+<body class="app-body">
+
+  <!-- ONBOARDING MODAL -->
+  <div class="onboard-overlay" id="onboard">
+    <div class="onboard-card">
+      <div class="onboard-logo">FĒM<span>ME</span></div>
+      <div class="onboard-progress">
+        <span class="done" id="prog-1"></span>
+        <span id="prog-2"></span>
+        <span id="prog-3"></span>
+      </div>
+
+      <!-- Step 1: Name -->
+      <div class="onboard-step active" id="step-1">
+        <h2 class="onboard-heading">Welcome. Let's personalize your experience.</h2>
+        <p class="onboard-sub">FĒMME is built around your biology, not averages. A few quick questions and we'll set up your dashboard.</p>
+        <label class="form-label" for="ob-name">What's your first name?</label>
+        <input class="form-input" type="text" id="ob-name" placeholder="Jimena" autocomplete="given-name">
+        <div class="onboard-actions">
+          <button class="btn btn-primary" onclick="nextStep(1)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Cycle start -->
+      <div class="onboard-step" id="step-2">
+        <h2 class="onboard-heading">When did your last period start?</h2>
+        <p class="onboard-sub">This is how we calculate your current cycle phase. You can update it any time from your dashboard.</p>
+        <label class="form-label" for="ob-date">First day of last period</label>
+        <input class="form-input" type="date" id="ob-date">
+        <div class="onboard-actions">
+          <button class="btn btn-outline" onclick="prevStep(2)">← Back</button>
+          <button class="btn btn-primary" onclick="nextStep(2)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Cycle length -->
+      <div class="onboard-step" id="step-3">
+        <h2 class="onboard-heading">How long is your typical cycle?</h2>
+        <p class="onboard-sub">The average is 28 days, but anywhere from 21–35 days is completely normal. Don't know exactly? Your best guess is fine.</p>
+        <label class="form-label" for="ob-length">Cycle length (days)</label>
+        <input class="form-input" type="number" id="ob-length" value="28" min="21" max="35">
+        <div class="onboard-actions">
+          <button class="btn btn-outline" onclick="prevStep(3)">← Back</button>
+          <button class="btn btn-terra" onclick="finishOnboarding()">Open my dashboard →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="f-nav">
+    <div class="f-nav__inner">
+      <a class="f-nav__logo" href="index.html">FĒM<span>ME</span></a>
+      <ul class="f-nav__links">
+        <li><a href="#" onclick="resetOnboarding(); return false;">Reset Demo</a></li>
+        <li><a href="index.html">← Back to Home</a></li>
+      </ul>
+      <div class="btn btn-outline f-nav__cta" id="nav-greeting" style="font-size:14px; padding: 8px 18px;">Dashboard</div>
+    </div>
+  </nav>
+
+  <!-- MAIN APP -->
+  <main class="app-main">
+
+    <!-- Phase Banner -->
+    <div class="phase-banner" id="phase-banner">
+      <div>
+        <div class="phase-banner__tag" id="phase-tag">● Loading…</div>
+        <h1 class="phase-banner__name" id="phase-name">—</h1>
+        <p class="phase-banner__desc" id="phase-desc">Setting up your personalized dashboard…</p>
+      </div>
+      <div class="phase-banner__right">
+        <div class="phase-banner__day" id="phase-day-num">—</div>
+        <div class="phase-banner__day-label">Day of cycle</div>
+      </div>
+    </div>
+
+    <!-- Dashboard Grid -->
+    <div class="dash-grid">
+
+      <!-- LEFT: Main content -->
+      <div class="dash-grid__main">
+
+        <!-- Today's Plan (tabbed) -->
+        <div class="today-card">
+          <div class="today-tabs">
+            <div class="today-tab active" onclick="switchTab('nutrition', this)"><span class="tab-icon">🥗</span> Nutrition</div>
+            <div class="today-tab" onclick="switchTab('training', this)"><span class="tab-icon">🏋️</span> Training</div>
+            <div class="today-tab" onclick="switchTab('sleep', this)"><span class="tab-icon">🌙</span> Sleep</div>
+            <div class="today-tab" onclick="switchTab('supplements', this)"><span class="tab-icon">💊</span> Supplements</div>
+            <div class="today-tab" onclick="switchTab('mood', this)"><span class="tab-icon">🧠</span> Mind</div>
+          </div>
+          <div class="today-panels">
+            <div class="today-panel active" id="panel-nutrition">
+              <h2 class="today-panel__heading" id="nut-title">—</h2>
+              <p class="today-panel__sub" id="nut-sub">—</p>
+              <div class="rec-list" id="nut-list"></div>
+            </div>
+            <div class="today-panel" id="panel-training">
+              <h2 class="today-panel__heading" id="train-title">—</h2>
+              <p class="today-panel__sub" id="train-sub">—</p>
+              <div class="rec-list" id="train-list"></div>
+            </div>
+            <div class="today-panel" id="panel-sleep">
+              <h2 class="today-panel__heading" id="sleep-title">—</h2>
+              <p class="today-panel__sub" id="sleep-sub">—</p>
+              <div class="rec-list" id="sleep-list"></div>
+            </div>
+            <div class="today-panel" id="panel-supplements">
+              <h2 class="today-panel__heading" id="supp-title">—</h2>
+              <p class="today-panel__sub" id="supp-sub">—</p>
+              <div class="rec-list" id="supp-list"></div>
+            </div>
+            <div class="today-panel" id="panel-mood">
+              <h2 class="today-panel__heading" id="mood-title">—</h2>
+              <p class="today-panel__sub" id="mood-sub">—</p>
+              <div class="rec-list" id="mood-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Log -->
+        <div class="quick-log">
+          <div class="quick-log__title">Daily Check-In</div>
+          <div class="quick-log__sub">How are you feeling today? Takes 10 seconds.</div>
+          <div class="log-row">
+            <div class="log-label">Energy</div>
+            <div class="log-emojis">
+              <div class="log-emoji" onclick="selectLog(this, 'energy')" title="Depleted">😴</div>
+              <div class="log-emoji" onclick="selectLog(this, 'energy')" title="Low">😑</div>
+              <div class="log-emoji" onclick="selectLog(this, 'energy')" title="Okay">😐</div>
+              <div class="log-emoji" onclick="selectLog(this, 'energy')" title="Good">😊</div>
+              <div class="log-emoji" onclick="selectLog(this, 'energy')" title="High">⚡️</div>
+            </div>
+          </div>
+          <div class="log-row">
+            <div class="log-label">Mood</div>
+            <div class="log-emojis">
+              <div class="log-emoji" onclick="selectLog(this, 'mood')" title="Anxious">😰</div>
+              <div class="log-emoji" onclick="selectLog(this, 'mood')" title="Irritable">😤</div>
+              <div class="log-emoji" onclick="selectLog(this, 'mood')" title="Neutral">😌</div>
+              <div class="log-emoji" onclick="selectLog(this, 'mood')" title="Good">😄</div>
+              <div class="log-emoji" onclick="selectLog(this, 'mood')" title="Thriving">🌟</div>
+            </div>
+          </div>
+          <div class="log-row">
+            <div class="log-label">Body</div>
+            <div class="log-emojis">
+              <div class="log-emoji" onclick="selectLog(this, 'body')" title="Cramping">🌊</div>
+              <div class="log-emoji" onclick="selectLog(this, 'body')" title="Bloated">🫧</div>
+              <div class="log-emoji" onclick="selectLog(this, 'body')" title="Normal">✅</div>
+              <div class="log-emoji" onclick="selectLog(this, 'body')" title="Strong">💪</div>
+              <div class="log-emoji" onclick="selectLog(this, 'body')" title="Peak">🔥</div>
+            </div>
+          </div>
+          <button class="log-submit" id="log-btn" onclick="submitLog()">Save Today's Check-In</button>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Sidebar -->
+      <div class="dash-grid__side">
+
+        <!-- Cycle Wheel -->
+        <div class="cycle-wheel-card">
+          <div class="cycle-wheel-card__title">Your Cycle</div>
+          <div class="cycle-wheel-card__sub" id="wheel-sub">—</div>
+          <svg id="cycle-svg" width="200" height="200" viewBox="0 0 200 200"></svg>
+          <div class="cycle-legend">
+            <div class="cycle-legend-item"><div class="cycle-legend-dot" style="background:#B85C6E"></div> Menstrual</div>
+            <div class="cycle-legend-item"><div class="cycle-legend-dot" style="background:#D4943A"></div> Follicular</div>
+            <div class="cycle-legend-item"><div class="cycle-legend-dot" style="background:#3D9E72"></div> Ovulatory</div>
+            <div class="cycle-legend-item"><div class="cycle-legend-dot" style="background:#8B6FB5"></div> Luteal</div>
+          </div>
+        </div>
+
+        <!-- AI Coach Chat -->
+        <div class="ai-coach-card">
+          <div class="chat-header">
+            <div class="chat-header__avatar">✨</div>
+            <div>
+              <div class="chat-header__name">FĒMME Coach</div>
+              <div class="chat-header__status chat-online">Active · Phase-aware</div>
+            </div>
+          </div>
+          <div class="chat-body" id="app-chat"></div>
+          <div class="chat-input-row">
+            <input class="chat-input" type="text" id="app-input" placeholder="Ask me anything…">
+            <button class="chat-send" onclick="appChat()">→</button>
+          </div>
+        </div>
+
+        <!-- Supplements -->
+        <div class="supps-card">
+          <div class="supps-card__title">Today's Supplements</div>
+          <div class="supps-card__sub" id="supp-phase-label">Based on your phase</div>
+          <div id="supp-timeline"></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="f-footer">
+    <span class="f-footer__logo">FĒMME</span>
+    <ul class="f-footer__links">
+      <li><a href="index.html">Home</a></li>
+    </ul>
+    <span class="f-footer__copy">© 2026 FĒMME · Built by Jimena Vazquez</span>
+  </footer>
+
+  <script src="femme.js"></script>
+</body>
+</html>
